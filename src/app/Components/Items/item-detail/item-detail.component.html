@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_item">
+            <div class="card">
+                <div class="card-body text-center">
+                    <p *ngIf="item.imageItem">
+                        <img src="{{item.imageItem}}" alt="{{item.name}}" class="img-fluid">
+                    </p>
+                    <h4 class="card-title">
+                        {{item.name}}
+                    </h4>
+                    <p class="card-subtitle" >
+                        {{item.price}}
+                    </p>
+                    <p class="card-text">
+                        {{item.detail}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

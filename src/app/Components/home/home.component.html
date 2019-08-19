@@ -1,0 +1,30 @@
+<section id="items" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of items">
+          <div class="card_item">
+            <div class="card">
+              <div class="card-body text-center">
+                <p>
+                  <img class="img-fluid" src="{{item.imageItem}}" alt="{{item.name}}">
+                </p>
+                <h5 routerLink="/item/{{item.id}}" class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  {{item.detail }}
+                </p>
+                <div class="container-precio-idioma">
+                  <p class="badge badge-info">
+                    {{item.price}}$
+                  </p>
+                  <!--p class="badge badge-info">
+                    {{item.idioma}}
+                  </p-->
+                </div>
+                <!--a href="{{item.link_amazon}}" class="btn btn-block btn-primary" target="_blank">Buy</a-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

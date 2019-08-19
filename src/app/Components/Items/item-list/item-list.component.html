@@ -1,0 +1,34 @@
+<br>
+<section class="row mt-5">
+    <div class="col">
+        <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modalItem">Add</button>
+        <table class="table table-hover text-justify">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">Detail.</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items; index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.detail}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.type == 1 ? 'Product' : 'Service'}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" (click)="onPreUpdateItem(item)"
+                        *ngIf="rolUser.type == 1" data-toggle="modal" data-target="#modalItem">Update</button>
+                        <button class="btn btn-danger btn-sm" (click)="onDeleteItem(item.id)"
+                        *ngIf="rolUser.type == 1" >delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<app-modal [userUid]="userUid"></app-modal>

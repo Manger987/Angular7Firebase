@@ -1,0 +1,69 @@
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+                {{!this.itemService.selectedItem.id ? 'New Item' : 'Update Item'}}
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form name="formItem" #formItem="ngForm" (ngSubmit)="onSaveItem(formItem)">
+                <input type="hidden" name="id" [(ngModel)]="this.itemService.selectedItem.id">
+                <input type="hidden" name="userUid" [value]="userUid">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" name="name"
+                         [(ngModel)]="this.itemService.selectedItem.name" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Detail:</label>
+                        <input type="text" class="form-control" name="detail" 
+                        [(ngModel)]="this.itemService.selectedItem.detail">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Price:</label>
+                        <input type="text" class="form-control" name="price" 
+                        [(ngModel)]="this.itemService.selectedItem.price" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Value:</label>
+                        <input type="text" class="form-control" name="value" 
+                        [(ngModel)]="this.itemService.selectedItem.value">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Image:</label>
+                        <input type="text" class="form-control" name="imageItem" 
+                        [(ngModel)]="this.itemService.selectedItem.imageItem">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Tipo Item:</label>
+                        <select name="type" class="form-control" 
+                        [(ngModel)]="this.itemService.selectedItem.type">
+                            <option value="1">Producto</option>
+                            <option value="2">Servicio</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6" >
+                        <label for="name">Tipo Item:</label>
+                        <select name="type_article" class="form-control" 
+                        [(ngModel)]="this.itemService.selectedItem.type_article">
+                            <option value="1">comestible</option>
+                            <option value="2">Accesorio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" #btnClose>Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
